@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Áreas de Figuras Planas</title>
+</head>
+
+<body>
+    <h2>Calculadora de Áreas</h2>
+
+    <h3>Retângulo</h3>
+    Base: <input id="baseRet"><br>
+    Altura: <input id="altRet"><br>
+    <button onclick="areaRetangulo()">Calcular</button>
+    <p id="resRet"></p>
+
+    <h3>Quadrado</h3>
+    Lado: <input id="ladoQuad"><br>
+    <button onclick="areaQuadrado()">Calcular</button>
+    <p id="resQuad"></p>
+
+    <h3>Losango</h3>
+    Diagonal maior: <input id="diagMaior"><br>
+    Diagonal menor: <input id="diagMenor"><br>
+    <button onclick="areaLosango()">Calcular</button>
+    <p id="resLos"></p>
+
+    <h3>Trapézio</h3>
+    Base maior: <input id="baseMaiorTrap"><br>
+    Base menor: <input id="baseMenorTrap"><br>
+    Altura: <input id="altTrap"><br>
+    <button onclick="areaTrapezio()">Calcular</button>
+    <p id="resTrap"></p>
+
+    <h3>Paralelogramo</h3>
+    Base: <input id="basePar"><br>
+    Altura: <input id="altPar"><br>
+    <button onclick="areaParalelogramo()">Calcular</button>
+    <p id="resPar"></p>
+
+    <h3>Triângulo</h3>
+    Base: <input id="baseTri"><br>
+    Altura: <input id="altTri"><br>
+    <button onclick="areaTriangulo()">Calcular</button>
+    <p id="resTri"></p>
+
+    <h3>Círculo</h3>
+    Raio: <input id="raio"><br>
+    <button onclick="areaCirculo()">Calcular</button>
+    <p id="resCirc"></p>
+
+    <script>
+        function areaRetangulo() {
+            var base = parseFloat(document.getElementById("baseRet").value);
+            var altura = parseFloat(document.getElementById("altRet").value);
+            var area = base * altura;
+            document.getElementById("resRet").innerText = "Área do retângulo: " + area;
+        }
+
+        function areaQuadrado() {
+            var lado = parseFloat(document.getElementById("ladoQuad").value);
+            var area = lado * lado;
+            document.getElementById("resQuad").innerText = "Área do quadrado: " + area;
+        }
+
+        function areaLosango() {
+            var dMaior = parseFloat(document.getElementById("diagMaior").value);
+            var dMenor = parseFloat(document.getElementById("diagMenor").value);
+            var area = (dMaior * dMenor) / 2;
+            document.getElementById("resLos").innerText = "Área do losango: " + area;
+        }
+
+        function areaTrapezio() {
+            var baseMaior = parseFloat(document.getElementById("baseMaiorTrap").value);
+            var baseMenor = parseFloat(document.getElementById("baseMenorTrap").value);
+            var altura = parseFloat(document.getElementById("altTrap").value);
+            var area = ((baseMaior + baseMenor) * altura) / 2;
+            document.getElementById("resTrap").innerText = "Área do trapézio: " + area;
+        }
+
+        function areaParalelogramo() {
+            var base = parseFloat(document.getElementById("basePar").value);
+            var altura = parseFloat(document.getElementById("altPar").value);
+            var area = base * altura;
+            document.getElementById("resPar").innerText = "Área do paralelogramo: " + area;
+        }
+
+        function areaTriangulo() {
+            var base = parseFloat(document.getElementById("baseTri").value);
+            var altura = parseFloat(document.getElementById("altTri").value);
+            var area = (base * altura) / 2;
+            document.getElementById("resTri").innerText = "Área do triângulo: " + area;
+        }
+
+        function areaCirculo() {
+            var raio = parseFloat(document.getElementById("raio").value);
+            var area = Math.PI * raio * raio;
+            document.getElementById("resCirc").innerText = "Área do círculo: " + area.toFixed(2);
+        }
+    </script>
+</body>
+</html>
